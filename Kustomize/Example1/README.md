@@ -1,6 +1,6 @@
 
 
-##Builds manifest based on the default base files
+## Builds manifest based on the default base files
 PS C:\Projects\KubernetesExamples\Kustomize\Example2> kustomize build base
 
 ## Builds manifest and shows the final output after the overlay.
