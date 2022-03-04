@@ -6,3 +6,8 @@ https://kubectl.docs.kubernetes.io/installation/kustomize/
 
 # Run within kubernetes
 kubectl kustomize --help 
+
+
+## Example 1 with Pure Kustomize
+
+## Example 2 with Kustomize and Helm
