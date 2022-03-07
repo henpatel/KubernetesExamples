@@ -11,3 +11,7 @@ PS C:\Projects\KubernetesExamples\Helm\Example1> helm install  prod-chart ./ --v
 
 
 
+Cleanup:
+PS C:\Projects\KubernetesExamples\Helm\Example1> helm delete dev-chart --namespace=dev-meridian
+PS C:\Projects\KubernetesExamples\Helm\Example1> helm delete prod-chart --namespace=prod-meridian
+PS C:\Projects\KubernetesExamples\Helm\Example1> helm delete ci-chart --namespace=ci-meridian 

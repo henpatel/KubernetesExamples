@@ -1,6 +1,12 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
+namePrefix: ci-
+namespace: ci-meridian
 bases:
 - ../../base
 patchesStrategicMerge:
+- nginx-deploy.yaml
 - nginx-service.yaml
+
+resources:
+  - ingress.yaml

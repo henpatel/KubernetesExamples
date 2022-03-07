@@ -12,5 +12,5 @@ spec:
     - protocol: TCP
       port: 8086 #Cluster IP Level
       targetPort: 80
-      nodePort: 31002  #External Port
+      nodePort: 31003  #External Port
   
