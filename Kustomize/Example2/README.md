@@ -1,3 +1,5 @@
+This example works well with ArgoCD.
+
 ### You can build a base template file as below:
 PS C:\Projects\KubernetesExamples\Kustomize\Example2> kustomize build overlays/base -o base-template.yaml
 

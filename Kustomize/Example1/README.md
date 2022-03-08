@@ -1,4 +1,4 @@
-
+NOTE:: This example works locally however doesn't work well with ARGOCD.
 
 ## Builds manifest based on the default base files
 PS C:\Projects\KubernetesExamples\Kustomize\Example1> kustomize build base
