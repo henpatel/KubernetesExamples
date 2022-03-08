@@ -1,4 +1,9 @@
-Different Examples of using Kustomize
+Different Examples of using Helm or Kustomize
+
+Helm folder contains examples for helm organization
+
+Kustomize folder contains examples for kustomizing kustomize examples
+
 
 #Install kustomize locally via chocolatey
 https://kubectl.docs.kubernetes.io/installation/kustomize/
@@ -8,6 +13,3 @@ https://kubectl.docs.kubernetes.io/installation/kustomize/
 kubectl kustomize --help 
 
 
-## Example 1 with Pure Kustomize
-
-## Example 2 with Kustomize and Helm

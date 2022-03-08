@@ -1,21 +1,29 @@
+### You can build a base template file as below:
+PS C:\Projects\KubernetesExamples\Kustomize\Example2> kustomize build overlays/base -o base-template.yaml
 
-# Getting Started:
+For dev:
+PS C:\Projects\KubernetesExamples\Kustomize\Example2> kustomize build overlays/dev -o dev-template.yaml
 
-- Got the base with nginx basic templated helm chart and made it work by changing the values file with ingress enabled and class name to nginx.
-PS C:\Projects\KubernetesExamples\Kustomize\Example2\base> helm install my-chart nginx
+For CI:
+PS C:\Projects\KubernetesExamples\Kustomize\Example2> kustomize build overlays/ci -o ci-template.yaml
 
-- To do the dry run and get the manifest that helm creates:
-PS C:\Projects\KubernetesExamples\Kustomize\Example2\base> helm install my-chart nginx --dry-run
-
-- To Delete the chart:
-PS C:\Projects\KubernetesExamples\Kustomize\Example2\base> helm delete my-chart
-
-- To see the template 
-PS C:\Projects\KubernetesExamples\Kustomize\Example2\base> helm template my-chart nginx
+For Prod:
+PS C:\Projects\KubernetesExamples\Kustomize\Example2> kustomize build overlays/ci -o ci-template.yaml
 
 
-# Builds manifest and shows the final output after the overlay.
-PS C:\Projects\KubernetesExamples\Kustomize\Example1> kustomize build overlays/ci
+## Builds manifest and shows the final output after the overlay.
+PS C:\Projects\KubernetesExamples\Kustomize\Example2> kustomize build overlays/ci
 
-# Applies the configuration to kubernetes
-PS C:\Projects\KubernetesExamples\Kustomize\Example1> kubectl apply -k  overlays/dev       
+## Applies the configuration to kubernetes
+PS C:\Projects\KubernetesExamples\Kustomize\Example2> kubectl apply -k  overlays/dev 
+PS C:\Projects\KubernetesExamples\Kustomize\Example2> kubectl apply -k  overlays/ci  
+PS C:\Projects\KubernetesExamples\Kustomize\Example2> kubectl apply -k  overlays/prod
+
+
+## To see all the resources that were created
+kubectl get all --namespace=dev-meridian 
+
+## Delete 
+PS C:\Projects\KubernetesExamples\Kustomize\Example2> kubectl delete -k  overlays/dev
+PS C:\Projects\KubernetesExamples\Kustomize\Example2> kubectl delete -k  overlays/ci
+PS C:\Projects\KubernetesExamples\Kustomize\Example2> kubectl delete -k  overlays/prod
