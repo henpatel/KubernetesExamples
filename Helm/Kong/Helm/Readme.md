@@ -91,3 +91,7 @@ or hostname: http://api1.kongtest.com:8080/
 PS C:\Projects\KubernetesExamples\Helm\Kong\Api1> curl --header "Host:api1.kongtest.com" http://localhost:8080
 
 ```
+
+References:
+https://konghq.com/kong-builders/
+https://konghq.com/videos/installing-kong-to-kubernetes-using-helm-part-2-kongbuilders/
