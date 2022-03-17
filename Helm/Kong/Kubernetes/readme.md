@@ -33,3 +33,6 @@ https://docs.konghq.com/gateway/2.8.x/install-and-run/kubernetes/
 https://medium.com/iotops/deploying-kong-api-gateway-in-kubernetes-all-the-what-why-where-and-some-how-questions-a9f91c661923
 
 https://www.padok.fr/en/blog/kong-apigateway-kubernetes
+
+
+Example using kubernetes ingress: https://github.com/Kong/demo-scene/tree/main/udp-quotes-service/kubernetes
