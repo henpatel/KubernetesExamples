@@ -1,7 +1,4 @@
 
-# To Install with Helm:
-https://docs.konghq.com/gateway/2.8.x/install-and-run/helm/
-
 ###Create namespace
 Create the namespace for Kong Gateway with Kubernetes Ingress Controller. For example:
 
