@@ -74,3 +74,20 @@ Kong: https://docs.konghq.com/kubernetes-ingress-controller/latest/guides/gettin
 
 ----
 
+Added a sample API helm chart via nginx at 
+C:\Projects\KubernetesExamples\Helm\Kong\Api1
+To Note here in the ingress class we set as 'Kong' for the ingress for nginx.
+
+```
+PS C:\Projects\KubernetesExamples\Helm\Kong\Api1> helm install api1 Helm 
+
+```
+
+Once this is done, we can verify the api available via api gateway:
+http://localhost:8080/ with host header
+or hostname: http://api1.kongtest.com:8080/
+
+```
+PS C:\Projects\KubernetesExamples\Helm\Kong\Api1> curl --header "Host:api1.kongtest.com" http://localhost:8080
+
+```

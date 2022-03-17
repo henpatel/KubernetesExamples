@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nginx-ingress
+spec:
+  ingressClassName: kong
+  rules:
+  - host: api1.kongtest.com # add this entry to your host file - 127.0.0.1 www.tenants.com
+    http:
+      paths:
+        - path: "/"
+          pathType: ImplementationSpecific
+          backend:
+            service:
+             name: nginx-service # this is name of the service
+             port:
+                number: 8086 # this is the service's cluster port exposed to be talked to a lot
