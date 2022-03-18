@@ -52,7 +52,7 @@ PS C:\Projects\KubernetesExamples\Helm\Kong\Helm> helm show values kong/kong > v
 Create a values.yaml file and bring in the admin section and enable it and then upgrade the chart.
 
 ```
-PS C:\Projects\KubernetesExamples\Helm\Kong\Helm> helm upgrade kong -n kong kong/kong -f values.yaml
+PS C:\Projects\KubernetesExamples\Helm\Kong\Helm> helm upgrade kong -n kong kong/kong -f values.dbless.yaml
 ```
 Once completed you will see below:
 Release "kong" has been upgraded. Happy Helming!
@@ -95,7 +95,7 @@ PS C:\Projects\KubernetesExamples\Helm\Kong\Api1> curl --header "Host:api1.kongt
 ----
 
 ###Also - you can just setup an ingress for existing urls setup in different namespaces as an example  with Ingress
-
+Add a host file entry: 127.0.0.1 services.meridian.com
 ```
 PS C:\Projects\KubernetesExamples\Helm\Kong\Ingress> kubectl apply -f kong-ingress.yml
 

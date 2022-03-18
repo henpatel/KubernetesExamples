@@ -8,7 +8,7 @@ metadata:
 spec:
   ingressClassName: kong
   rules:
-  - host: services.meridian.com # add this entry to your host file - 127.0.0.1 www.tenants.com
+  - host: services.meridian.com # add this entry to your host file - 127.0.0.1 services.meridian.com
     http:
       paths:
         - path: "/apis/tenants"
