@@ -92,6 +92,17 @@ PS C:\Projects\KubernetesExamples\Helm\Kong\Api1> curl --header "Host:api1.kongt
 
 ```
 
+----
+
+###Also - you can just setup an ingress for existing urls setup in different namespaces as an example  with Ingress
+
+```
+PS C:\Projects\KubernetesExamples\Helm\Kong\Ingress> kubectl apply -f kong-ingress.yml
+
+```
+
+
 References:
 https://konghq.com/kong-builders/
 https://konghq.com/videos/installing-kong-to-kubernetes-using-helm-part-2-kongbuilders/
+https://github.com/Kong/demo-scene/tree/main/quotes-service/kubernetes
