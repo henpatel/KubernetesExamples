@@ -9,9 +9,13 @@ NOTE: by default this installs kong in dbless mode.
 > helm repo add kong https://charts.konghq.com
 > helm repo update
 
-## Switch to kong namespace and install kong
-## Kong Gateway (OSS)
+## Switch to kong namespace and install kong with default mode
 > helm install kong -n kong kong/kong --set ingressController.installCRDs=false
+
+## To Install with Postgres:
+
+PS C:\Projects\KubernetesExamples\Helm\Kong\helm> helm install kong -n kong kong/kong --set ingressController.installCRDs=false -f values.postgreslocal.yaml
+
 
 ```
 NAME: kong
@@ -54,6 +58,8 @@ Create a values.yaml file and bring in the admin section and enable it and then 
 ```
 PS C:\Projects\KubernetesExamples\Helm\Kong\Helm> helm upgrade kong -n kong kong/kong -f values.dbless.yaml
 ```
+
+
 Once completed you will see below:
 Release "kong" has been upgraded. Happy Helming!
 NAME: kong
