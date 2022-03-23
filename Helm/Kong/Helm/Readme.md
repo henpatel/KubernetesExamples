@@ -14,7 +14,7 @@ NOTE: by default this installs kong in dbless mode.
 
 ## To Install with Postgres:
 
-PS C:\Projects\KubernetesExamples\Helm\Kong\helm> helm install kong -n kong kong/kong --set ingressController.installCRDs=false -f values.postgreslocal.yaml
+PS C:\Projects\KubernetesExamples\Helm\Kong\helm> helm install kong -n kong kong/kong -f values.postgreslocal.yaml
 
 
 ```
@@ -103,9 +103,17 @@ PS C:\Projects\KubernetesExamples\Helm\Kong\Api1> curl --header "Host:api1.kongt
 ###Also - you can just setup an ingress for existing urls setup in different namespaces as an example  with Ingress
 Add a host file entry: 127.0.0.1 services.meridian.com
 ```
-PS C:\Projects\KubernetesExamples\Helm\Kong\Ingress> kubectl apply -f kong-ingress.yml
+PS C:\Projects\KubernetesExamples\Helm\Kong\Ingress> kubectl apply -f services-ingress.yml
 
 ```
+
+To see the services gateway working - 
+port forward:
+kubectl -n kong port-forward --address localhost,0.0.0.0 svc/kong-kong-proxy 8080:80
+
+and then access:
+http://services.meridian.com:8080/apis/tenants/healthcheck
+http://services.meridian.com:8080/apis/domains/healthcheck
 
 
 References:
