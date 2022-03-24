@@ -17,9 +17,9 @@ spec:
             - name: KONG_PG_PASSWORD
               value: kong
             - name: KONG_PG_HOST
-              value: 127.0.0.1
+              value: kongpostgres
             - name: KONG_PG_PORT
-              value: "30537"
+              value: "30538"
           image: kong:2.7
           name: kong-migrations
       initContainers:
@@ -30,9 +30,9 @@ spec:
               sleep 1; done
           env:
             - name: KONG_PG_HOST
-              value: 127.0.0.1
+              value: kongpostgres
             - name: KONG_PG_PORT
-              value: "30537"
+              value: "30538"
           image: busybox
           name: wait-for-postgres
       restartPolicy: OnFailure
