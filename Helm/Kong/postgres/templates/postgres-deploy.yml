@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: postgres
-        image: postgres
+        image: postgres:13.6
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 5432
@@ -24,13 +24,13 @@ spec:
             - configMapRef:
                 name: postgres-config
         volumeMounts:
-            - mountPath: /var/lib/postgresql/data
-              name: postgredb
+            - mountPath: /var/lib/postgresql-13.6/data
+              name: postgredb-kong
         resources:
           limits:
             memory: "128Mi"
             cpu: "500m"
       volumes:
-        - name: postgredb
+        - name: postgredb-kong
           persistentVolumeClaim:
             claimName: postgres-pv-claim-kong
