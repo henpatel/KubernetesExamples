@@ -40,3 +40,8 @@ curl -i -X POST --url http://localhost:8001/services/example-service/routes --da
 
 ## Access the service via gateway
 curl -i -X GET --url http://localhost:8000/ --header 'Host: example.com'
+
+
+##Stop Container
+
+docker stop 589aecdefcf7
