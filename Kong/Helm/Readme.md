@@ -112,6 +112,16 @@ http://services.meridian.com:8080/apis/tenants/healthcheck
 http://services.meridian.com:8080/apis/domains/healthcheck
 
 
+
+-------
+### TO test out default with database, you can just run the below command
+```
+helm template kong kong/kong -n kong --set admin.enabled=true --set admin.http.enabled=true --set postgresql.enabled=true --set postgresql.postgresqlUsername=kong --set postgresql.postgresqlDatabase=kong --set env.database=postgres
+
+```
+
+-------
+
 References:
 https://konghq.com/kong-builders/
 https://konghq.com/videos/installing-kong-to-kubernetes-using-helm-part-2-kongbuilders/
